@@ -1,11 +1,25 @@
 let a = 4;
 let b = 7;
+let operator = "-";
 
-console.log(add(a,b));
-console.log(substract(a,b));
-console.log(multiply(a,b));
-console.log(divide(a,b));
+console.log(operate(a, b, operator));
 
+
+
+function operate(a, b, operator){
+    //ans = 0;
+    if(operator == "+"){
+        return add(a, b)
+    }else if (operator == "-"){
+        return substract(a, b)
+    }else if (operator == "*"){
+        return multiply(a, b)
+    }else if (operator== "/"){
+        return multiply(a, b)
+    }else{
+        return "Error"
+    }
+}
 
 function add(a, b){
     return a + b;

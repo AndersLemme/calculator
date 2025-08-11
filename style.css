@@ -11,6 +11,7 @@ html, body {
 }
 .calc_container{
     background-color: white;
+    border-radius: 2.5%;
     height: auto;
     width: 120px;
     display: block;
@@ -18,10 +19,18 @@ html, body {
     justify-content: center;
 
 }
-button {
-    background-color: DEFAULT;
+.buttons {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.button{
+    background-color: default;
 }
 .display{
     background-color: lightgray;
-    r
+}
+
+.fa-backspace{
+    color: black;
+    opacity: 70%;
 }

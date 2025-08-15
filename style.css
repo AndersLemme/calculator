@@ -7,13 +7,20 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+}
+input {
+    display: flex;
+    border: none;
+    height: 40px;
+}
+input:focus {
+    outline: none; 
 }
 .calc_container{
     background-color: white;
     border-radius: 2.5%;
     height: auto;
-    width: 150px;
+    width: 250px;
     display: block;
     flex-direction: row;
     justify-content: center;
@@ -22,11 +29,15 @@ html, body {
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
-.button{
+button{
     background-color: default;
+    height: 50px;
 }
 .display{
+    display: flex;
+    flex-direction: column;
     background-color: lightgray;
+    border-radius: 10px;
 }
 
 .fa-backspace{
@@ -35,7 +46,15 @@ html, body {
 }
 .number{
     width: auto;
+    font-size: 16px;
+}
+.operator{
+    font-size: 24px;
 }
 .clear, .zero{
     grid-column: span 2;
+    font-size: 16px;
+}
+.remove{
+    font-size: 16px;
 }

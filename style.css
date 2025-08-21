@@ -17,7 +17,7 @@ input:focus {
     outline: none; 
 }
 .calc_container{
-    background-color: white;
+    /*background-color: white; */
     border-radius: 2.5%;
     height: auto;
     width: 250px;
@@ -30,14 +30,23 @@ input:focus {
     grid-template-columns: auto auto auto auto;
 }
 button{
-    background-color: default;
+    background-color: white;
     height: 50px;
+    border-radius: 5px;
 }
 .display{
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px;
+}
+.result{
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: white;
+    font-size: 16px;
+    justify-items: right;
 }
 
 .fa-backspace{

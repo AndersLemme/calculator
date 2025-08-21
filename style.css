@@ -11,7 +11,7 @@ html, body {
 input {
     display: flex;
     border: none;
-    height: 40px;
+    /*height: 40px; */  
 }
 input:focus {
     outline: none; 
@@ -20,7 +20,7 @@ input:focus {
     /*background-color: white; */
     border-radius: 2.5%;
     height: auto;
-    width: 250px;
+    width: 350px;
     display: block;
     flex-direction: row;
     justify-content: center;
@@ -31,39 +31,48 @@ input:focus {
 }
 button{
     background-color: white;
-    height: 50px;
-    border-radius: 5px;
+    height: 83.44px;
+    border-radius: 10px;
 }
 .display{
     display: flex;
     flex-direction: column;
     background-color: white;
+    padding: 5px;
     border-radius: 5px;
-    border: 2px;
+    border: 10px;
 }
 .result{
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: white;
+    font-size: 20px;
+    justify-items: right;
+}
+.calchist{
+    height: 50px;
     margin-left: 5px;
     margin-right: 5px;
     background-color: white;
     font-size: 16px;
     justify-items: right;
 }
-
 .fa-backspace{
     color: black;
     opacity: 70%;
 }
 .number{
     width: auto;
-    font-size: 16px;
+    font-size: 18px;
 }
 .operator{
-    font-size: 24px;
+    font-size: 26px;
 }
 .clear, .zero{
     grid-column: span 2;
-    font-size: 16px;
+    font-size: 18px;
 }
 .remove{
-    font-size: 16px;
+    font-size: 18px;
 }

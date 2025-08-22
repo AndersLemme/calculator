@@ -18,6 +18,9 @@ input:focus {
 }
 .calc_container{
     /*background-color: white; */
+    display: flex;
+    flex-direction: column;
+    grid: 15px;
     border-radius: 2.5%;
     height: auto;
     width: 350px;
@@ -38,8 +41,8 @@ button{
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 10px;
     border: 10px;
 }
 .result{
@@ -47,8 +50,8 @@ button{
     margin-left: 5px;
     margin-right: 5px;
     background-color: white;
-    font-size: 20px;
-    justify-items: right;
+    font-size: 24px;
+    text-align: right;
 }
 .calchist{
     height: 50px;
@@ -56,7 +59,7 @@ button{
     margin-right: 5px;
     background-color: white;
     font-size: 16px;
-    justify-items: right;
+    text-align: right;
 }
 .fa-backspace{
     color: black;

@@ -4,6 +4,7 @@ let operator = "-";
 
 let sum = 0
 let display = ""
+let cmp = false;
 
 console.log(operate(a, b, operator));
 const result = document.querySelector(".result");
@@ -64,8 +65,11 @@ zero_btn.addEventListener("click", () => {
 // OPERATORS 
 const comma_btn = document.querySelector(".comma");
 comma_btn.addEventListener("click", () => {
+    if(cmp === false){
     display += "."
+    cmp = true;
     result.value = display;
+    }
 });
 
 const sum_btn = document.querySelector(".sum");

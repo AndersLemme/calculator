@@ -7,10 +7,15 @@ let display = ""
 let cmp = false;
 
 console.log(operate(a, b, operator));
+
 const result = document.querySelector(".result");
-result.value = display;
+result.value = "";
+const calchist = document.querySelector(".calchist");
+calchist.value = "";
 
 
+
+//Numbers
 const one_btn = document.querySelector(".one");
 one_btn.addEventListener("click", () => { 
     display += "1";
@@ -62,7 +67,7 @@ zero_btn.addEventListener("click", () => {
     result.value = display;
 });
 
-// OPERATORS 
+// COMMA
 const comma_btn = document.querySelector(".comma");
 comma_btn.addEventListener("click", () => {
     if(cmp === false){
@@ -72,11 +77,24 @@ comma_btn.addEventListener("click", () => {
     }
 });
 
+// OPERATORS 
+const add_btn = document.querySelector(".add");
+add_btn.addEventListener("click", () => {
+    operator = "+"
+    if(result.value != ""){ 
+        calchist.value = result.value; //+ " +";
+        display = ""
+    }
+    result.value = display;
+});
+
 const sum_btn = document.querySelector(".sum");
 sum_btn.addEventListener("click", () => {
     sum = Number(display);
     console.log(sum);
+    result.value = operate(Number(result.value), Number(calchist.value), operator);
 })
+
 
 function operate(a, b, operator){
     //ans = 0;

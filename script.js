@@ -12,6 +12,7 @@ const result = document.querySelector(".result");
 result.value = "";
 const calchist = document.querySelector(".calchist");
 calchist.value = "";
+let calchistvalue = "" //this is the value without the operator sign used in the function
 
 
 
@@ -81,20 +82,57 @@ comma_btn.addEventListener("click", () => {
 const add_btn = document.querySelector(".add");
 add_btn.addEventListener("click", () => {
     operator = "+"
-    if(result.value != ""){ 
-        calchist.value = result.value; //+ " +";
+    if(result.value != ""){ //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+        calchist.value = result.value + " +";
+        calchistvalue = result.value;
+        display = ""
+    }
+    result.value = display;
+});
+const subtract_btn = document.querySelector(".subtract");
+subtract_btn.addEventListener("click", () => {
+    operator = "-"
+    if(result.value != ""){  //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+        calchist.value = result.value + " -";
+        calchistvalue = result.value;
+        display = ""
+    }
+    result.value = display;
+});
+const divide_btn = document.querySelector(".divide");
+divide_btn.addEventListener("click", () => {
+    operator = "/"
+    if(result.value != ""){  //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+        calchist.value = result.value + " /";
+        calchistvalue = result.value;
+        display = ""
+    }
+    result.value = display;
+});
+const multiply_btn = document.querySelector(".multiply");
+multiply_btn.addEventListener("click", () => {
+    operator = "*"
+    if(result.value != ""){  //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+        calchist.value = result.value + " *";
+        calchistvalue = result.value;
         display = ""
     }
     result.value = display;
 });
 
+
+
 const sum_btn = document.querySelector(".sum");
 sum_btn.addEventListener("click", () => {
     sum = Number(display);
     console.log(sum);
-    result.value = operate(Number(result.value), Number(calchist.value), operator);
+    result.value = operate(Number(calchistvalue), Number(result.value), operator);
 })
-
+const remove_btn = document.querySelector(".remove");
+remove_btn.addEventListener("click", () =>{
+    display = display.slice(0, -1);
+    result.value = display;
+})
 
 function operate(a, b, operator){
     //ans = 0;

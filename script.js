@@ -121,12 +121,11 @@ multiply_btn.addEventListener("click", () => {
 });
 
 
-
 const sum_btn = document.querySelector(".sum");
 sum_btn.addEventListener("click", () => {
     sum = Number(display);
     console.log(sum);
-    result.value = operate(Number(calchistvalue), Number(result.value), operator);
+    result.value = operate(Number(result.value), Number(calchistvalue), operator);//operate(Number(calchistvalue), Number(result.value), operator);
 })
 const remove_btn = document.querySelector(".remove");
 remove_btn.addEventListener("click", () =>{
@@ -139,7 +138,7 @@ function operate(a, b, operator){
     if(operator == "+"){
         return add(a, b)
     }else if (operator == "-"){
-        return substract(a, b)
+        return substract(b, a)
     }else if (operator == "*"){
         return multiply(a, b)
     }else if (operator== "/"){

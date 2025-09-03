@@ -129,6 +129,13 @@ sum_btn.addEventListener("click", () => {
 })
 const remove_btn = document.querySelector(".remove");
 remove_btn.addEventListener("click", () =>{
+    
+    //check if last char is comma before removing
+    let lastChar = display.slice(-1);
+    if (lastChar == "."){
+        cmp = false;
+    }
+    
     display = display.slice(0, -1);
     result.value = display;
 })

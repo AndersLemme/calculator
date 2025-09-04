@@ -126,6 +126,7 @@ sum_btn.addEventListener("click", () => {
     sum = Number(display);
     console.log(sum);
     result.value = operate(Number(result.value), Number(calchistvalue), operator);//operate(Number(calchistvalue), Number(result.value), operator);
+    cmp = false;
 })
 const remove_btn = document.querySelector(".remove");
 remove_btn.addEventListener("click", () =>{
@@ -135,7 +136,6 @@ remove_btn.addEventListener("click", () =>{
     if (lastChar == "."){
         cmp = false;
     }
-    
     display = display.slice(0, -1);
     result.value = display;
 })

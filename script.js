@@ -88,6 +88,7 @@ add_btn.addEventListener("click", () => {
         display = ""
     }
     result.value = display;
+    cmp = false;
 });
 const subtract_btn = document.querySelector(".subtract");
 subtract_btn.addEventListener("click", () => {
@@ -98,6 +99,7 @@ subtract_btn.addEventListener("click", () => {
         display = ""
     }
     result.value = display;
+    cmp = false;
 });
 const divide_btn = document.querySelector(".divide");
 divide_btn.addEventListener("click", () => {
@@ -108,6 +110,7 @@ divide_btn.addEventListener("click", () => {
         display = ""
     }
     result.value = display;
+    cmp = false;
 });
 const multiply_btn = document.querySelector(".multiply");
 multiply_btn.addEventListener("click", () => {
@@ -118,6 +121,7 @@ multiply_btn.addEventListener("click", () => {
         display = ""
     }
     result.value = display;
+    cmp = false;
 });
 
 
@@ -130,7 +134,6 @@ sum_btn.addEventListener("click", () => {
 })
 const remove_btn = document.querySelector(".remove");
 remove_btn.addEventListener("click", () =>{
-    
     //check if last char is comma before removing
     let lastChar = display.slice(-1);
     if (lastChar == "."){

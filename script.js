@@ -1,8 +1,4 @@
-let a = 4;
-let b = 7;
 let operator = "";
-
-let sum = 0
 let display = ""
 let cmp = false;
 
@@ -12,7 +8,6 @@ result.value = "";
 const calchist = document.querySelector(".calchist");
 calchist.value = "";
 let calchistvalue = "" //this is the value without the operator sign used in the function
-
 
 
 //Numbers
@@ -66,6 +61,7 @@ zero_btn.addEventListener("click", () => {
     display += "0";
     result.value = display;
 });
+
 
 // COMMA
 const comma_btn = document.querySelector(".comma");
@@ -150,6 +146,17 @@ remove_btn.addEventListener("click", () =>{
     display = display.slice(0, -1);
     result.value = display;
 })
+const clear_btn = document.querySelector(".clear");
+clear_btn.addEventListener("click", () =>{
+    //reset everything
+    operator = "";
+    display = ""
+    cmp = false;
+    result.value = display;
+    calchist.value = result.value
+    calchistvalue = result.value;
+})
+
 
 function sum_func(){
     sum = Number(display);

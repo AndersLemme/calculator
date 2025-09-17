@@ -160,23 +160,34 @@ clear_btn.addEventListener("click", () =>{
 
 function sum_func() {
     if (operator !== "") {
-        // Normal operation
+        // First "="
         let a = Number(calchistvalue);
         let b = Number(display);
-        result.value = operate(a, b, operator);
+        let res = operate(a, b, operator);
 
-        // Store last operation for repeated "="
+        result.value = res;
+
+        // History shows only this calculation
+        calchist.value = `${a} ${operator} ${b} = ${res}`;
+
+        // Store last operation
         lastOperator = operator;
         lastOperand = b;
 
-        calchistvalue = result.value;
+        calchistvalue = res;
         display = "";
         operator = "";
     } else if (lastOperator !== "" && lastOperand !== "") {
-        // Repeat last operation
+        // Repeated "="
         let a = Number(result.value);
-        result.value = operate(a, Number(lastOperand), lastOperator);
-        calchistvalue = result.value;
+        let res = operate(a, Number(lastOperand), lastOperator);
+
+        result.value = res;
+
+        // History resets to only the new step
+        calchist.value = `${a} ${lastOperator} ${lastOperand} = ${res}`;
+
+        calchistvalue = res;
     }
     cmp = false;
 }
@@ -207,5 +218,5 @@ function multiply(a, b){
     return a*b;
 }
 function divide(a, b){
-    return b/a;
+    return a/b;
 }

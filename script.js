@@ -158,27 +158,43 @@ clear_btn.addEventListener("click", () =>{
 })
 
 
+function sum_func() {
+    if (operator !== "") {
+        // Normal operation
+        let a = Number(calchistvalue);
+        let b = Number(display);
+        result.value = operate(a, b, operator);
+
+        // Store last operation for repeated "="
+        lastOperator = operator;
+        lastOperand = b;
+
+        calchistvalue = result.value;
+        display = "";
+        operator = "";
+    } else if (lastOperator !== "" && lastOperand !== "") {
+        // Repeat last operation
+        let a = Number(result.value);
+        result.value = operate(a, Number(lastOperand), lastOperator);
+        calchistvalue = result.value;
+    }
+    cmp = false;
+}
+/*
 function sum_func(){
     sum = Number(display);
-    console.log(sum);
     result.value = operate(Number(result.value), Number(calchistvalue), operator);//operate(Number(calchistvalue), Number(result.value), operator);
     cmp = false;
-    operator = "";
-}
+    operator = "";  
+}*/
 
 function operate(a, b, operator){
     //ans = 0;
-    if(operator == "+"){
-        return add(a, b)
-    }else if (operator == "-"){
-        return substract(b, a)
-    }else if (operator == "*"){
-        return multiply(a, b)
-    }else if (operator== "/"){
-        return divide(a, b)
-    }else{
-        return "Error"
-    }
+    if(operator == "+")  return add(a, b)
+    if (operator == "-") return substract(a, b)
+    if (operator == "*") return multiply(a, b)
+    if (operator== "/") return divide(a, b)
+    return "Error"
 }
 
 function add(a, b){

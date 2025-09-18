@@ -10,6 +10,7 @@ calchist.value = "";
 let calchistvalue = "" //this is the value without the operator sign used in the function
 
 
+
 //Numbers
 const one_btn = document.querySelector(".one");
 one_btn.addEventListener("click", () => { 
@@ -56,12 +57,20 @@ nine_btn.addEventListener("click", () => {
     display += "9";
     result.value = display;
 });
+
+
 const zero_btn = document.querySelector(".zero");
-zero_btn.addEventListener("click", () => { 
-    display += "0";
-    result.value = display;
+zero_btn.addEventListener("click", addZero);
+document.addEventListener("keydown", function(event){
+    if (event.key === "0"){
+        addZero();
+    }
 });
 
+function addZero(){
+    display += "0";
+    result.value = display;
+}
 
 // COMMA
 const comma_btn = document.querySelector(".comma");

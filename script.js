@@ -58,17 +58,16 @@ nine_btn.addEventListener("click", () => {
     result.value = display;
 });
 
-
 const zero_btn = document.querySelector(".zero");
-zero_btn.addEventListener("click", addZero);
+zero_btn.addEventListener("click", () => addNumber("0"));
 document.addEventListener("keydown", function(event){
     if (event.key === "0"){
-        addZero();
+        addNumber("0");
     }
 });
 
-function addZero(){
-    display += "0";
+function addNumber(char){
+    display += char;
     result.value = display;
 }
 

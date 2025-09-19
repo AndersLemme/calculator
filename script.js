@@ -13,56 +13,32 @@ let calchistvalue = "" //this is the value without the operator sign used in the
 
 //Numbers
 const one_btn = document.querySelector(".one");
-one_btn.addEventListener("click", () => { 
-    display += "1";
-    result.value = display;
-});
+one_btn.addEventListener("click", () => addNumber("1"));
 const two_btn = document.querySelector(".two");
-two_btn.addEventListener("click", () => { 
-    display += "2";
-    result.value = display;
-});
+two_btn.addEventListener("click", () => addNumber("2"));
 const three_btn = document.querySelector(".three");
-three_btn.addEventListener("click", () => { 
-    display += "3";
-    result.value = display;
-    });
+three_btn.addEventListener("click", () => addNumber("3"));
 const four_btn = document.querySelector(".four");
-four_btn.addEventListener("click", () => { 
-    display += "4";
-    result.value = display;
-});
+four_btn.addEventListener("click", () => addNumber("4"));
 const five_btn = document.querySelector(".five");
-five_btn.addEventListener("click", () => { 
-    display += "5";
-    result.value = display;
-});
+five_btn.addEventListener("click", () => addNumber("5"));
 const six_btn = document.querySelector(".six");
-six_btn.addEventListener("click", () => { 
-    display += "6";
-    result.value = display;
-});
+six_btn.addEventListener("click", () => addNumber("6"));
 const seven_btn = document.querySelector(".seven");
-seven_btn.addEventListener("click", () => { 
-    display += "7";
-    result.value = display;
-});
+seven_btn.addEventListener("click", () => addNumber("7"));
 const eight_btn = document.querySelector(".eight");
-eight_btn.addEventListener("click", () => { 
-    display += "8";
-    result.value = display;
-});
+eight_btn.addEventListener("click", () => addNumber("8"));
 const nine_btn = document.querySelector(".nine");
-nine_btn.addEventListener("click", () => { 
-    display += "9";
-    result.value = display;
-});
-
+nine_btn.addEventListener("click", () => addNumber("9"));
 const zero_btn = document.querySelector(".zero");
 zero_btn.addEventListener("click", () => addNumber("0"));
+
+
+//keyboard inputs
 document.addEventListener("keydown", function(event){
-    if (event.key === "0"){
-        addNumber("0");
+    const allowed = "0123456789";
+    if (allowed.includes(event.key)){
+        addNumber(event.key);
     }
 });
 

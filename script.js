@@ -58,13 +58,15 @@ comma_btn.addEventListener("click", () => {
 });
 
 // OPERATORS 
+
+//add
 const add_btn = document.querySelector(".add");
 add_btn.addEventListener("click", () => {
     if(operator != ""){
         sum_func();
     }
     operator = "+"
-    if(result.value != ""){ //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+    if(result.value != ""){
         calchist.value = result.value + " +";
         calchistvalue = result.value;
         display = ""
@@ -72,13 +74,15 @@ add_btn.addEventListener("click", () => {
     result.value = display;
     cmp = false;
 });
+
+//subtract
 const subtract_btn = document.querySelector(".subtract");
 subtract_btn.addEventListener("click", () => {
     if(operator != ""){
         sum_func();
     }
     operator = "-"
-    if(result.value != ""){  //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+    if(result.value != ""){
         calchist.value = result.value + " -";
         calchistvalue = result.value;
         display = "";
@@ -86,13 +90,15 @@ subtract_btn.addEventListener("click", () => {
     result.value = display;
     cmp = false;
 });
+
+//divide
 const divide_btn = document.querySelector(".divide");
 divide_btn.addEventListener("click", () => {
     if(operator != ""){
         sum_func();
     }
     operator = "/"
-    if(result.value != ""){  //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+    if(result.value != ""){ 
         calchist.value = result.value + " /";
         calchistvalue = result.value;
         display = "";
@@ -100,13 +106,15 @@ divide_btn.addEventListener("click", () => {
     result.value = display;
     cmp = false;
 });
+
+//multiply
 const multiply_btn = document.querySelector(".multiply");
 multiply_btn.addEventListener("click", () => {
     if(operator != ""){
         sum_func();
     }
     operator = "*"
-    if(result.value != ""){  //THIS HAS TO BE CHANGED WITH A BOOL OR SOMETHING ELSE.
+    if(result.value != ""){
         calchist.value = result.value + " *";
         calchistvalue = result.value;
         display = ""
@@ -115,7 +123,7 @@ multiply_btn.addEventListener("click", () => {
     cmp = false;
 });
 
-
+//sum
 const sum_btn = document.querySelector(".sum");
 sum_btn.addEventListener("click", () => {
     sum_func();
@@ -175,13 +183,56 @@ function sum_func() {
     }
     cmp = false;
 }
-/*
-function sum_func(){
-    sum = Number(display);
-    result.value = operate(Number(result.value), Number(calchistvalue), operator);//operate(Number(calchistvalue), Number(result.value), operator);
-    cmp = false;
-    operator = "";  
-}*/
+
+//Keyboard input function for operators and comma:
+document.addEventListener("keydown", function(event){
+    //comma using both "." and ","
+    if((event.key === "." || event.key === ",") && cmp === false){
+        display += "."
+        cmp = true;
+        result.value = display;
+    }
+
+    //operators
+    if(["/", "+", "-", "*"].includes(event.key)){
+        if (operator != "") {
+            sum_func();
+        }
+        operator = event.key;
+        if (result.value != "") {
+            calchist.value = result.value + " " + operator;
+            calchistvalue = result.value;
+            display = "";
+        }
+        result.value = display;
+        cmp = false;
+    }
+
+    // ENTER for "="
+    if (event.key === "Enter") {
+        sum_func();
+    }
+
+    // BACKSPACE for remove
+    if (event.key === "Backspace") {
+        let lastChar = display.slice(-1);
+        if (lastChar == ".") {
+            cmp = false;
+        }
+        display = display.slice(0, -1);
+        result.value = display;
+    }
+
+    // ESC for clear
+    if (event.key === "Escape") {
+        operator = "";
+        display = "";
+        cmp = false;
+        result.value = display;
+        calchist.value = "";
+        calchistvalue = "";
+    }
+});
 
 function operate(a, b, operator){
     //ans = 0;

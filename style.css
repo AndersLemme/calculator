@@ -8,6 +8,13 @@ html, body {
     align-items: center;
     flex-direction: column;
 }
+main{ /* This is for putting footer outside of main (and on bottom of page) */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 input {
     display: flex;
     border: none;
@@ -92,4 +99,27 @@ button:active{
 }
 .remove{
     font-size: 18px;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    gap: 10px;                /* space between text and logo */
+    color: #aaa;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+footer .github-logo {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* makes logo white on dark bg */
+    transition: transform 0.2s;
+}
+
+footer .github-logo:hover {
+    transform: scale(1.2);
 }

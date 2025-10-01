@@ -253,5 +253,8 @@ function multiply(a, b){
     return a*b;
 }
 function divide(a, b){
+    if(b == 0){
+        alert("Nope. That path only leads to chaos");
+    }
     return a/b;
 }
